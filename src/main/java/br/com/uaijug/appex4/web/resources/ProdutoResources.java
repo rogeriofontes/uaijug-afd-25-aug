@@ -1,4 +1,4 @@
-package br.com.uaijug.appex4.resources;
+package br.com.uaijug.appex4.web.resources;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,33 +19,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.uaijug.appex4.model.domain.Cliente;
-import br.com.uaijug.appex4.service.ClienteService;
+import br.com.uaijug.appex4.model.domain.Produto;
+import br.com.uaijug.appex4.service.ProdutoService;
 
 @RestController
-@RequestMapping(path = "/clientes")
-public class ClienteResources {
+@RequestMapping(path = "/produtos")
+public class ProdutoResources {
 
 	@Autowired
-	private ClienteService service;
+	private ProdutoService service;
 
 	@GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@ResponseBody
-	public ResponseEntity<List<Cliente>> getAll() {
-		List<Cliente> clientes = service.listAll();
-		return new ResponseEntity<>(clientes, HttpStatus.OK);
+	public ResponseEntity<List<Produto>> getAll() {
+		List<Produto> produtos = service.listAll();
+		return new ResponseEntity<>(produtos, HttpStatus.OK);
 	}
 
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public ResponseEntity<Cliente> add(@Valid @RequestBody Cliente cliente) {
-		Cliente result = service.save(cliente);
-		return new ResponseEntity<Cliente>(result, HttpStatus.CREATED);
+	public ResponseEntity<Produto> add(@Valid @RequestBody Produto produto) {
+		Produto result = service.save(produto);
+		return new ResponseEntity<Produto>(result, HttpStatus.CREATED);
 	}
 
 	@PutMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public ResponseEntity<Cliente> change(@PathVariable Long id, @RequestBody Cliente cliente) {
-		Cliente result = service.update(id, cliente);
-		return new ResponseEntity<Cliente>(result, HttpStatus.OK);
+	public ResponseEntity<Produto> change(@PathVariable Long id, @RequestBody Produto produto) {
+		Produto result = service.update(id, produto);
+		return new ResponseEntity<Produto>(result, HttpStatus.OK);
 	}
 
 	@DeleteMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -56,10 +56,10 @@ public class ClienteResources {
 
 	@GetMapping(path = "/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public ResponseEntity<Cliente> getUserByUsername(@PathVariable("name") String name) {
-		Optional<Cliente> cliente = service.findByName(name);
+	public ResponseEntity<Produto> getUserByUsername(@PathVariable("name") String name) {
+		Optional<Produto> produto = service.findByName(name);
 
-		return new ResponseEntity<Cliente>(cliente.get(), HttpStatus.OK);
+		return new ResponseEntity<Produto>(produto.get(), HttpStatus.OK);
 	}
 
 }

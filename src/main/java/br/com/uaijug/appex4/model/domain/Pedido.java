@@ -2,7 +2,6 @@ package br.com.uaijug.appex4.model.domain;
 
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -21,7 +20,7 @@ public class Pedido extends IDEntity {
 	@JoinColumn(name = "id_cliente")
 	private Cliente cliente;
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany
 	@JoinTable(name = "item_pedido", joinColumns = @JoinColumn(name = "id_pedido", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "id_produto", referencedColumnName = "id"))
 	private Set<Produto> produtos;
 
@@ -47,6 +46,11 @@ public class Pedido extends IDEntity {
 
 	public void setProdutos(Set<Produto> produtos) {
 		this.produtos = produtos;
+	}
+
+	@Override
+	public String toString() {
+		return "Pedido [titulo=" + titulo + ", cliente=" + cliente + ", produtos=" + produtos + "]";
 	}
 
 }

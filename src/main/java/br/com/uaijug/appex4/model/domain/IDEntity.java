@@ -7,12 +7,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @MappedSuperclass
 public abstract class IDEntity implements Serializable {
 	private static final long serialVersionUID = 3656963226052917751L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonProperty("id")
 	private Long id;
 
 	public Long getId() {

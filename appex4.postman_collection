@@ -1,0 +1,224 @@
+{
+	"variables": [],
+	"info": {
+		"name": "appex4",
+		"_postman_id": "c36996fe-3727-1c5e-1044-5611f658237d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9001/clientes",
+			"request": {
+				"url": "http://localhost:9001/clientes",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9001/produtos",
+			"request": {
+				"url": "http://localhost:9001/produtos",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9001/pedidos",
+			"request": {
+				"url": "http://localhost:9001/pedidos",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9001/clientes",
+			"request": {
+				"url": "http://localhost:9001/clientes",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Joao\",\n    \"email\": \"rogerio@localhost.com\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9001/produtos",
+			"request": {
+				"url": "http://localhost:9001/produtos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"veja\",\n    \"preco\": 11.1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9001/pedidos",
+			"request": {
+				"url": "http://localhost:9001/pedidos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"titulo\": \"Compra de Shampo e veja\",\n        \"cliente\": {\n            \"nome\": \"Rogério Fontes\",\n            \"email\": \"rogerio@localhost.com\",\n            \"id\": 1\n        },\n        \"produtos\": [\n            {\n                \"nome\": \"shampoo\",\n                \"preco\": 12.3,\n                \"id\": 1\n            },\n            {\n            \t\"nome\": \"veja\",\n\t\t\t    \"preco\": 11.1,\n\t\t\t    \"id\": 4\n            }\n        ]\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9001/pedidos",
+			"request": {
+				"url": "http://localhost:9001/pedidos/17",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9001/produtos",
+			"request": {
+				"url": "http://localhost:9001/produtos/4",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"veja\",\n    \"preco\": 11.1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9001/clientes",
+			"request": {
+				"url": "http://localhost:9001/clientes/2",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Joao\",\n    \"email\": \"rogerio@localhost.com\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9001/clientes",
+			"request": {
+				"url": "http://localhost:9001/clientes/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Joao Antonio\",\n    \"email\": \"rogerio@localhost.com\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9001/produtos",
+			"request": {
+				"url": "http://localhost:9001/produtos/3",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"veja\",\n    \"preco\": 11.1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9001/pedidos",
+			"request": {
+				"url": "http://localhost:9001/pedidos/16",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"titulo\": \"Compra de Shampo e veja\",\n        \"cliente\": {\n            \"nome\": \"Rogério Fontes\",\n            \"email\": \"rogerio@localhost.com\",\n            \"id\": 1\n        },\n        \"produtos\": [\n            {\n                \"nome\": \"shampoo\",\n                \"preco\": 12.3,\n                \"id\": 1\n            },\n            {\n                \"nome\": \"sabonete\",\n                \"preco\": 1.3,\n                \"id\": 1\n            },\n            {\n            \t\"nome\": \"veja\",\n\t\t\t    \"preco\": 11.1,\n\t\t\t    \"id\": 3\n            }\n        ]\n    }"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
